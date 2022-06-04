@@ -4,11 +4,19 @@ class SessionsController < ApplicationController
         @user = User.find_by(username: params["user"][:username])
         if @user && @user.authenticate(params["user"][:password])
             login!
-            redirect_to user_path(@user)
+            render json: {
+                user: UserSerializer.new(@user)
+            }
         else
-            redirect_to new_session_path
-            errors: ['Please check your username/password and try again, or create an account if you do not have one.']
+            render json: {
+
+                error: ['Please check your username/password and try again, or create an account if you do not have one.']
+            }
         end
+    end
+
+    def is_logged_in?
+        
     end
 
     def destroy
