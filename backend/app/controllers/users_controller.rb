@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login!
-      render json: @user, status: :created, location: @user
+      render json: @user, status: :created, location: @user, user: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:username, :password_digest)
+      params.require(:user).permit(:username, :password)
     end
 end
