@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         end
     end
 
-    def is_logged_in?
+    def is_logged_in
         current_user
 
         if logged_in? && current_user

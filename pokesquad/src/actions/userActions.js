@@ -71,6 +71,15 @@ export function logout() {
 
 export function loggedinStatus() {
     return dispatch => {
-        fetch(`/logged_in`)
+        fetch(`/logged_in`, { withCredentials: true })
+        .then(response => response.json())
+        .then(data => {
+            console.log("loginStatus", data)
+            if (data.is_logged_in) {
+                dispatch({ type: LOGIN, payload: data })
+            } else {
+                dispatch({ type: LOGOUT, payload: data })
+            }
+        })
     }
 }
