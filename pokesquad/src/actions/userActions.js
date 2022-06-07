@@ -54,5 +54,23 @@ export function login(user) {
 
 
 export function logout() {
-    return dispatch
+    return dispatch => {
+        fetch(`/logout`, {
+            method: "DELETE"
+        }, { withCredentials: true })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.logged_in) {
+                dispatch({ type: LOGOUT, payload: data })
+            }
+        })
+        .catch(error => console.log("logout error", error))
+    }
+}
+
+
+export function loggedinStatus() {
+    return dispatch => {
+        fetch(`/logged_in`)
+    }
 }
