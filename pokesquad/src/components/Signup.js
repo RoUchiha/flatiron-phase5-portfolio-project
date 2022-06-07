@@ -12,7 +12,22 @@ class Signup extends Component {
     render() {
         return (
             <form >
-                
+                <input 
+                type="text"
+                name="username"
+                placeholder='Username (minimum 4 characters)'
+                required
+                />
+
+                <input 
+                type='password'
+                name='password'
+                placeholder='Password'
+                />
+
+                <button type="submit">
+                    Sign Up
+                </button>
 
             </form>
         )
@@ -20,3 +35,6 @@ class Signup extends Component {
 
 
 }
+
+
+export default Signup;
