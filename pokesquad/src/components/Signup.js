@@ -9,10 +9,27 @@ class Signup extends Component {
         }
     };
 
+
+    handleUsernameChange = (event) => {
+        this.setState({
+            username: event.target.value
+        })
+    };
+
+    handlePasswordChange = (event) => {
+        this.setState({
+            password: event.target.value
+        })
+    };
+
+
+    handleSubmit
+
     render() {
         return (
-            <form >
+            <form onSubmit={this.handleSubmit}>
                 <input 
+                onChange={this.handleUsernameChange}
                 type="text"
                 name="username"
                 placeholder='Username (minimum 4 characters)'
@@ -20,6 +37,7 @@ class Signup extends Component {
                 />
 
                 <input 
+                onChange={this.handlePasswordChange}
                 type='password'
                 name='password'
                 placeholder='Password'
