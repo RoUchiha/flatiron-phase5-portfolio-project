@@ -35,27 +35,43 @@ class Signup extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input 
-                onChange={this.handleUsernameChange}
-                type="text"
-                name="username"
-                placeholder='Username (minimum 4 characters)'
-                required
-                />
+            <div className='signup-parent-container'>
+                <div className='signup-container'>
+                    <h2>SIGN UP</h2>
+                    <hr />
 
-                <input 
-                onChange={this.handlePasswordChange}
-                type='password'
-                name='password'
-                placeholder='Password'
-                />
+                    <form onSubmit={this.handleSubmit}>
+                        <label>Username</label>
+                        <input 
+                        onChange={this.handleUsernameChange}
+                        type="text"
+                        name="username"
+                        placeholder='Username (minimum 3 characters)'
+                        value={this.state.username}
+                        required
+                        />
 
-                <button type="submit">
-                    Sign Up
-                </button>
+                        <label>Password</label>
+                        <input 
+                        onChange={this.handlePasswordChange}
+                        type='password'
+                        name='password'
+                        placeholder='Password'
+                        value={this.state.password}
+                        required
+                        />
 
-            </form>
+                        <button 
+                        type="submit"
+                        id='signup-button'
+                        >
+                            Sign Up
+                        </button>
+
+                    </form>
+                    <p id="login-p-tag"> Have an account already? <Link to="/login">Login here</Link></p>
+                </div>
+            </div>
         )
     }
 

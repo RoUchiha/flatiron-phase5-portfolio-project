@@ -29,7 +29,7 @@ export function signup(user) {
 export function login(user) {
 
     return dispatch => {
-        fetch(`/sessions`, {
+        fetch(`/login`, {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origins": "*",
