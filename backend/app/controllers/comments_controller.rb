@@ -18,6 +18,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
+      user = User.find_by(id: @comment.user_id)
+      @comment.user_username = user.username
       render json: @comment, status: :created, location: @comment
     else
       render json: @comment.errors, status: :unprocessable_entity
