@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signup } from '../actions/userActions';
+import { Link } from 'react-router-dom';
+import '../../style/Login.css';
 
 class Signup extends Component {
     constructor(props) {
@@ -23,7 +27,11 @@ class Signup extends Component {
     };
 
 
-    handleSubmit
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.signupDispatch(this.state)
+        this.props.routerProps.history.push("/teams")
+    }
 
     render() {
         return (
@@ -51,8 +59,13 @@ class Signup extends Component {
         )
     }
 
+}
 
+const mapDispatchToProps = dispatch => {
+    return {
+        signupDispatch: user => dispatch(signup(user))
+    }
 }
 
 
-export default Signup;
+export default connect(null, mapDispatchToProps)(Signup);
