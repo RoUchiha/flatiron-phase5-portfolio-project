@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { GET_POKEMON } from '../actions/constants';
 import { LOGIN, LOGOUT } from '../constants';
 
 const rootReducer = combineReducers({
@@ -37,6 +38,18 @@ function teamReducer(state = {}, action) {
         default:
             return state
         
+    }
+
+}
+
+
+function pokemonReducer(state = [], action) {
+
+    switch (action.type) {
+        case GET_POKEMON:
+            return action.payload
+        default:
+            return state
     }
 
 }
