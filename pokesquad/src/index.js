@@ -11,8 +11,11 @@ import App from './App.js'
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
+  
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

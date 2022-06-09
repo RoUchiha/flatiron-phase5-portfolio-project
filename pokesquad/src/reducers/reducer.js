@@ -4,7 +4,8 @@ import { LOGIN, LOGOUT } from '../constants';
 const rootReducer = combineReducers({
     users: userReducer,
     teams: teamReducer,
-    pokemon: pokemonReducer
+    pokemon: pokemonReducer,
+    comment: commentReducer
 })
 
 export default rootReducer;
@@ -22,6 +23,22 @@ function userReducer(state = {}, action) {
             return state
     }
 
+}
+
+function teamReducer(state = {}, action) {
+    
+    switch (action.type) {
+        case GET_TEAMS:
+            return action.payload
+        
+        case ADD_TEAM:
+            return [...state, action.payload]
+        
+        default:
+            return state
+        
+    }
 
 }
+
 
