@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Pokedex from './containers/Pokedex';
 import './App.css';
-import { Route } from 'react-router-dom';
+
 
 class App extends Component {
 
