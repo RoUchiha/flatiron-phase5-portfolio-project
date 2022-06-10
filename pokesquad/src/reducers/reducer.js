@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { GET_POKEMON } from '../actions/constants';
-import { LOGIN, LOGOUT } from '../constants';
+
+import { LOGIN, LOGOUT, GET_POKEMON, GET_TEAMS, ADD_TEAM} from '../actions/constants';
+
+
 
 const rootReducer = combineReducers({
     users: userReducer,
@@ -9,7 +11,11 @@ const rootReducer = combineReducers({
     comment: commentReducer
 })
 
+
 export default rootReducer;
+
+
+
 
 function userReducer(state = {}, action) {
 
@@ -55,3 +61,12 @@ function pokemonReducer(state = [], action) {
 }
 
 
+function commentReducer(state = {}, action) {
+
+    switch (action.type) {
+
+        default:
+            return state
+    }
+
+}

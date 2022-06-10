@@ -4,8 +4,10 @@ import { Route } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Pokedex from './containers/Pokedex';
+import allTeamsContainer from './containers/allTeamsContainer';
+import myTeamsContainer from './containers/myTeamsContainer';
 import './App.css';
-
+import { ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE } from './routePaths';
 
 class App extends Component {
 

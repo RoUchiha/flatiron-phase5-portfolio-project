@@ -1,0 +1,5 @@
+export const HOMEPAGE = '/'
+export const ALLTEAMS = '/teams'
+export const LOGIN = '/login'
+export const MYTEAMS = '/teams'
+export const POKEDEX = '/pokemons'

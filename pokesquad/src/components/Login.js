@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/userActions';
 import { Link } from 'react-router-dom';
-import '../../style/Login.css';
+import '../style/Login.css';
 
 class Login extends Component {
 
