@@ -5,9 +5,9 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Pokedex from './containers/Pokedex';
-import allTeamsContainer from './containers/allTeamsContainer';
-import myTeamsContainer from './containers/myTeamsContainer';
-import addTeamContainer from './containers/addTeamContainer'
+import allTeamsContainer from './containers/AllTeamsContainer';
+import myTeamsContainer from './containers/MyTeamsContainer';
+import addTeamContainer from './containers/AddTeamContainer'
 import './App.css';
 import { ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE, ADDTEAM, SIGNUP } from './routePaths';
 

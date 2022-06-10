@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-class addNewTeam extends Component {
+class AddNewTeam extends Component {
 
    constructor(props) {
        super(props);
@@ -33,11 +33,19 @@ class addNewTeam extends Component {
         this.props.addTeamDispatch(this.state);
         this.props.routerProps.history.push('/teams')
    }
+   
+   buildOptions() {
+    var arr = [];
+
+    for (let i = 1; i <= 898; i++) {
+        arr.push(<option key={i} value="{i}">{i}</option>)
+    }
+
+    return arr; 
+    }
 
    render() {
-       const allIds = () => { for (let i=0; i < 899; i++) {
-           <option value={`${i}`}>{i}</option>
-       }  }
+       
        return (
            <div className='add-team-form'>
                <form onSubmit={this.handleSubmit}>
@@ -46,27 +54,27 @@ class addNewTeam extends Component {
 
 
                     <select value={this.state.pokemon1} name="pokemon1" onChange={this.handleChange} required>
-                        {allIds}
+                        {this.buildOptions()}
                     </select>
 
                     <select value={this.state.pokemon2} name="pokemon2" onChange={this.handleChange} required>
-                        {allIds}
+                        {this.buildOptions()}
                     </select>
 
                     <select value={this.state.pokemon3} name="pokemon3" onChange={this.handleChange} required>
-                        {allIds}
+                        {this.buildOptions()}
                     </select>
 
                     <select value={this.state.pokemon4} name="pokemon4" onChange={this.handleChange} required>
-                        {allIds}
+                        {this.buildOptions()}
                     </select>
 
                     <select value={this.state.pokemon5} name="pokemon5" onChange={this.handleChange} required>
-                        {allIds}
+                        {this.buildOptions()}
                     </select>
 
                     <select value={this.state.pokemon6} name="pokemon6" onChange={this.handleChange} required>
-                        {allIds}
+                        {this.buildOptions()}
                     </select>
 
                     <input type="submit" value="Create Team" id='add-team-button'/>
@@ -83,7 +91,7 @@ class addNewTeam extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: state.users,
+        current_user: state.users,
         pokemon: state.pokemon
     }
 }
@@ -94,4 +102,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(addNewTeam)
+export default connect(mapStateToProps, mapDispatchToProps)(AddNewTeam)

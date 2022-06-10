@@ -4,16 +4,17 @@ import { fetchTeams } from '../actions/teamActions';
 import Team from '../components/Team.js'
 
 
-class myTeamsContainer extends Component {
+class AllTeamsContainer extends Component {
+
 
     render() {
         return (
-            "my teams test"
+            "all teams test"
         )
     }
 
-    // `/users/${this.state.current_user.id}/teams`
+
+
 }
 
-
-export default myTeamsContainer;
+export default AllTeamsContainer;
