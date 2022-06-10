@@ -3,9 +3,10 @@ import Pokedex from '../containers/Pokedex';
 import { addTeam } from '../actions/teamActions';
 import { DropdownSearchInput } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
-class addTeam extends Component {
+class addNewTeam extends Component {
 
    constructor(props) {
        super(props);
@@ -34,7 +35,7 @@ class addTeam extends Component {
    }
 
    render() {
-       const allIds = () => { for (i=0;i<899;i++) {
+       const allIds = () => { for (let i=0; i < 899; i++) {
            <option value={`${i}`}>{i}</option>
        }  }
        return (
@@ -80,17 +81,17 @@ class addTeam extends Component {
 
 }
 
-mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         users: state.users,
         pokemon: state.pokemon
     }
 }
 
-mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
         addTeamDispatch: team => dispatch(addTeam(team))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(addTeam)
+export default connect(mapStateToProps, mapDispatchToProps)(addNewTeam)

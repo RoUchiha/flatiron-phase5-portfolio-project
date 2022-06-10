@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+#navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+}
+
+.nav-link{
+  width: 100px;
+  padding: 4px;
+  margin: 0 3px 3px;
+  background: red;
+  color: black;
+  background-color: cyan;
+}
