@@ -22,3 +22,9 @@ for pokemon in poke_array
         sprite: pokemon["sprites"]["front_default"]
     )
 end
+
+user1 = User.create(
+    username: "testuser",
+    password: "testpass"
+
+)

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :teams
   resources :comments
   resources :pokemons
-  resources :users
+  resources :users do
+    resources :teams
+  end
   
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

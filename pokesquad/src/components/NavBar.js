@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { logout } from "../actions/userActions";
 import { connect } from "react-redux";
+import { ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE } from './routePaths';
+
 
 class Navbar extends Component {
 
