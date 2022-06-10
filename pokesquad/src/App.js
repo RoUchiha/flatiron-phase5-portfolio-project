@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App">
         
         <h1>Testing</h1>
-        
+        <Navbar />
         <Router >
           
             <Route path={HOMEPAGE} component={myTeamsContainer} />
@@ -31,7 +31,7 @@ class App extends Component {
           
         </Router>
 
-        <Navbar />
+        
       
       
       </div>
