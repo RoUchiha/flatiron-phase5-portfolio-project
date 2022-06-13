@@ -8,6 +8,7 @@ class AllTeamsContainer extends Component {
 
 
     render() {
+        console.log(this.props.current_user)
         return (
             "all teams test"
         )
@@ -17,4 +18,11 @@ class AllTeamsContainer extends Component {
 
 }
 
-export default AllTeamsContainer;
+
+const mapStateToProps = (state) => {
+    return {
+      current_user: state.users
+    }
+  }
+
+export default connect(mapStateToProps)(AllTeamsContainer);

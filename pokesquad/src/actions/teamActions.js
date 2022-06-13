@@ -3,7 +3,7 @@ import { GET_TEAMS, ADD_TEAM } from "./constants";
 export function fetchTeams() {
 
     return dispatch => {
-        fetch(`/teams`)
+        fetch(`http://localhost:4000/teams`)
         .then(response => {
             return response.json()
         })
@@ -17,13 +17,13 @@ export function fetchTeams() {
 export function addTeam(team) {
 
     return dispatch => {
-        fetch(`/teams`, {
+        fetch(`http://localhost:4000/teams`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Accept: "application/json"
+                
             },
-            body: JSON.stringify(team)
+            body: JSON.stringify({team})
         })
         .then(response => response.json())
         .then(data => dispatch({ type: ADD_TEAM, payload: data }))

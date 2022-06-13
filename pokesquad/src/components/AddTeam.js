@@ -23,6 +23,7 @@ class AddNewTeam extends Component {
    }
 
    handleChange = (event) => {
+
        this.setState({
            [event.target.name]: event.target.value
        })
@@ -31,21 +32,22 @@ class AddNewTeam extends Component {
    handleSubmit = (event) => {
         event.preventDefault();
         this.props.addTeamDispatch(this.state);
-        this.props.routerProps.history.push('/teams')
+        window.location.href=("/myteams")
    }
    
    buildOptions() {
     var arr = [];
 
-    for (let i = 1; i <= 898; i++) {
-        arr.push(<option key={i} value="{i}">{i}</option>)
+    for (let i = 0; i <= 898; i++) {
+        arr.push(<option key={i} value={i}>{i}</option>)
     }
 
     return arr; 
     }
 
    render() {
-       
+       console.log(this.state)
+       console.log(this.props.current_user)
        return (
            <div className='add-team-form'>
                <form onSubmit={this.handleSubmit}>

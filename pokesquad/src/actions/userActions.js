@@ -3,21 +3,23 @@ import { LOGIN, LOGOUT } from "./constants";
 export function signup(user) {
 
     return dispatch => {
-        fetch(`/users`, {
+        fetch('http://localhost:4000/users', {
             method: "POST",
             headers: {
-                "Access-Control-Allow-Origins": "*",
-                "Content-Type": "application/json",
-                Accept: "application/json"
+                
+                "Content-Type": "application/json"
+                
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify({user})
         },
         { withCredentials: true }
         )
         .then(response => response.json())
         .then(data => {
+            console.log('signup', data);
             if (data.status === 'created') {
-                dispatch({ type: LOGIN, payload: data })
+                
+                dispatch({ type: LOGIN, payload: data.user })
             }
         })
         .catch(error => console.log("signup error", error))
@@ -29,14 +31,13 @@ export function signup(user) {
 export function login(user) {
 
     return dispatch => {
-        fetch(`/login`, {
+        fetch(`http://localhost:4000/login`, {
             method: "POST",
             headers: {
-                "Access-Control-Allow-Origins": "*",
-                "Content-Type": "application/json",
-                Accept: "application/json"
+                
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify({user})
         },
             { withCredentials: true }
         )
@@ -55,7 +56,7 @@ export function login(user) {
 
 export function logout() {
     return dispatch => {
-        fetch(`/logout`, {
+        fetch(`http://localhost:4000/logout`, {
             method: "DELETE"
         }, { withCredentials: true })
         .then(response => response.json())
@@ -71,7 +72,7 @@ export function logout() {
 
 export function loggedinStatus() {
     return dispatch => {
-        fetch(`/logged_in`, { withCredentials: true })
+        fetch(`http://localhost:4000/logged_in`, { withCredentials: true })
         .then(response => response.json())
         .then(data => {
             console.log("loginStatus", data)

@@ -4,24 +4,15 @@ import { LOGIN, LOGOUT, GET_POKEMON, GET_TEAMS, ADD_TEAM} from '../actions/const
 
 
 
-const rootReducer = combineReducers({
-    users: userReducer,
-    teams: teamReducer,
-    pokemon: pokemonReducer,
-    comment: commentReducer
-})
-
-
-export default rootReducer;
 
 
 
 
-function userReducer(state = {}, action) {
+const userReducer = (state = {user: {}, logged_in: false}, action) => {
 
     switch (action.type) {
         case LOGIN:
-            return action.payload
+            return  {...state, user: action.payload, logged_in: action.payload}
 
         case LOGOUT:
             return {}
@@ -70,3 +61,13 @@ function commentReducer(state = {}, action) {
     }
 
 }
+
+const rootReducer = combineReducers({
+    users: userReducer,
+    teams: teamReducer,
+    pokemon: pokemonReducer,
+    comment: commentReducer
+})
+
+
+export default rootReducer;

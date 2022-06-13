@@ -8,12 +8,21 @@ class MyTeamsContainer extends Component {
 
     render() {
         return (
-            "my teams test"
+            
+           
+                
+               `${this.props.current_user.username}`
+           
         )
     }
 
     // `/users/${this.state.current_user.id}/teams`
 }
 
+const mapStateToProps = (state) => {
+    return {
+      current_user: state.users
+    }
+  }
 
-export default MyTeamsContainer;
+export default connect(mapStateToProps)(MyTeamsContainer);

@@ -30,7 +30,7 @@ class Signup extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.signupDispatch(this.state)
-        window.location.href=("/allteams")
+        
     }
 
     render() {
