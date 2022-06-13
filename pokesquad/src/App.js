@@ -5,9 +5,9 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Pokedex from './containers/Pokedex';
-import allTeamsContainer from './containers/AllTeamsContainer';
-import myTeamsContainer from './containers/MyTeamsContainer';
-import addTeamContainer from './containers/AddTeamContainer'
+import AllTeamsContainer from './containers/AllTeamsContainer';
+import MyTeamsContainer from './containers/MyTeamsContainer';
+import AddTeamContainer from './containers/AddTeamContainer'
 import './App.css';
 import { ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE, ADDTEAM, SIGNUP } from './routePaths';
 
@@ -21,11 +21,11 @@ class App extends Component {
         <Navbar />
         <Router >
           
-            <Route path={HOMEPAGE} component={myTeamsContainer} />
-            <Route path={ALLTEAMS} component={allTeamsContainer} />
-            <Route path={MYTEAMS} component={myTeamsContainer} />
+            <Route path={HOMEPAGE} component={MyTeamsContainer} />
+            <Route path={ALLTEAMS} component={AllTeamsContainer} />
+            <Route path={MYTEAMS} component={MyTeamsContainer} />
             <Route path={POKEDEX} component={Pokedex} />
-            <Route path={ADDTEAM} component={addTeamContainer} />
+            <Route path={ADDTEAM} component={AddTeamContainer} />
             <Route path={LOGIN} component={Login} />
             <Route path={SIGNUP} component={Signup} />
           

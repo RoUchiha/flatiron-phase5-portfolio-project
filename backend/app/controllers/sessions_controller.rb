@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
         @user = User.find_by(username: session_params[:username])
         if @user && @user.authenticate(session_params[:password])
             session[:user_id] = @user.id
+            session[:id] = @user.id
             current_user
             render json: {
-                user: @user, logged_in: true
+                user: UserSerializer.new(@user), logged_in: true, status: 'created'
             }
         else
             render json: {

@@ -19,7 +19,7 @@ export function signup(user) {
             console.log('signup', data);
             if (data.status === 'created') {
                 
-                dispatch({ type: LOGIN, payload: data.user })
+                dispatch({ type: "LOGIN", payload: data.user })
             }
         })
         .catch(error => console.log("signup error", error))
@@ -30,7 +30,7 @@ export function signup(user) {
 
 export function login(user) {
 
-    return dispatch => {
+    return (dispatch) => {
         fetch(`http://localhost:4000/login`, {
             method: "POST",
             headers: {
@@ -45,7 +45,7 @@ export function login(user) {
         .then(data => {
             console.log("login", data)
             if (data.logged_in) {
-                dispatch({ type: LOGIN, payload: data })
+                dispatch({ type: 'LOGIN', payload: data })
             }
         })
         .catch(error => console.log("login error", error))
