@@ -28,7 +28,7 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.loginDispatch(this.state)
-        this.props.routerProps.history.push("/teams")
+        window.location.href=("/allteams")
     }
 
 
