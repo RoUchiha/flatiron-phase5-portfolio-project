@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 import { login } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import '../style/Login.css';
+import axios from 'axios';
 
 class Login extends Component {
 
-    state = { 
-        username: '',
-        password: ''
-    }
+    
+        state = { 
+            username: '',
+            password: ''
+        }
+    
 
 
     handleUsernameChange = (event) => {
@@ -26,8 +29,23 @@ class Login extends Component {
 
 
     handleSubmit = (event) => {
+        console.log('form submitted')
         event.preventDefault();
-        this.props.loginDispatch(this.state)
+        axios.post('http://localhost:4000/login', {
+            user: {
+                username: this.state.username,
+                password: this.state.password 
+            }
+        },
+        { withCredentials: true }
+        )
+        .then(data => {
+            console.log("login", data.data.user)
+            if (data.logged_in) {
+                this.props.loginDispatch(data.data.user);
+            }
+        })
+        .catch(error => console.log("login error", error))
        
     }
 
@@ -73,7 +91,7 @@ class Login extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        loginDispatch: user => dispatch(login(user))
+        loginDispatch: (data) => dispatch({ type: 'LOGIN', data })
     }
 }
 

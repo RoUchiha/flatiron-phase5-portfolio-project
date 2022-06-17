@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { signup } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import '../style/Login.css';
+import axios from 'axios';
 
 class Signup extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -29,9 +31,24 @@ class Signup extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.signupDispatch(this.state)
-        
+        axios.post('http://localhost:4000/users', {
+            user: {
+                username: this.state.username,
+                password: this.state.password 
+            }
+        },
+        { withCredentials: true }
+        )
+        .then(data => {
+            console.log("signup", data.data.user)
+            if (data.status === 'created') {
+                this.props.signupDispatch(data.data.user);
+            }
+        })
+        .catch(error => console.log("signup error", error))
+       
     }
+        
 
     render() {
         return (
@@ -79,7 +96,7 @@ class Signup extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        signupDispatch: user => dispatch(signup(user))
+        signupDispatch: (data) =>  dispatch({ type: "LOGIN", data })
     }
 }
 

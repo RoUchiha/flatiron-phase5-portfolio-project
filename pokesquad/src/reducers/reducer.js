@@ -8,11 +8,11 @@ import { LOGIN, LOGOUT, GET_POKEMON, GET_TEAMS, ADD_TEAM} from '../actions/const
 
 
 
-function userReducer (state = [], action) {
+function userReducer (state = {}, action) {
 
     switch (action.type) {
         case "LOGIN":
-            return [...state, action.payload.user]
+            return action.payload
 
         case LOGOUT:
             return {}
