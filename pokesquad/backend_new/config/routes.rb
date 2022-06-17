@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :sessions, only: [:create]
+  resources :sessions, only: [:create, :get, :update, :delete]
   resources :registrations, only: [:create]
-  delete :logout, to: 'sessions#logout'
-  get :logged_in, to: 'sessions#logged_in'
-  get :login, to: 'sessions#create'
+  delete '/logout', to: 'sessions#logout'
+  get '/logged_in', to: 'sessions#logged_in'
+  post '/login', to: 'sessions#login'
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

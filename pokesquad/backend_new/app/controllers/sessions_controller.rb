@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     include CurrentUserConcern
 
 
-    def create
+    def login
         user = User.find_by(username: params['user']['username'])
         .try(:authenticate, params['user']['password'])
 
