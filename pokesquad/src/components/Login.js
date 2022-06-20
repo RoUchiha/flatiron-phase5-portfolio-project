@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../actions/userActions';
+import { login, setUser } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import '../style/Login.css';
 import axios from 'axios';
@@ -40,9 +40,9 @@ class Login extends Component {
         { withCredentials: true }
         )
         .then(data => {
-            console.log("login", data.data.user)
-            if (data.logged_in) {
-                this.props.loginDispatch(data.data.user);
+            console.log("login", data.data)
+            if (data.data.logged_in) {
+                this.props.setUser()
             }
         })
         .catch(error => console.log("login error", error))
@@ -51,6 +51,7 @@ class Login extends Component {
 
 
     render() {
+        
         return (
             <div className='login-container'>
                 <h2>LOGIN</h2>
@@ -95,4 +96,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, { setUser })(Login);

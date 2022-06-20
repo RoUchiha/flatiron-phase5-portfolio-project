@@ -2,28 +2,54 @@ import { combineReducers } from 'redux';
 
 import { LOGIN, LOGOUT, GET_POKEMON, GET_TEAMS, ADD_TEAM} from '../actions/constants';
 
+import {persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 
 
+const userState = {
+    user: [
+        {id: '0', username: 'state'}
+    ]
+}
 
-
-
-function userReducer (state = {}, action) {
-
-    switch (action.type) {
-        case "LOGIN":
-            return action.payload
-
-        case LOGOUT:
-            return {}
-
-        default:
-            return state
-    }
+const userPersistConfig = {
+    key: 'user',
+    storage: storage,
 
 }
 
-function teamReducer(state = [], action) {
+const usersReducer = (state = 0, action) => {
+
+    switch (action.type) {
+
+        case "GETTING_USER":
+            return 'testing';
+
+        case "LOGIN_USER":
+            console.log('dispatch success', action.type, action.payload, state)
+            return state + 2;
+           
+    
+        case LOGOUT:
+            console.log('logged out', state)
+            return 3;
+
+        default:
+            console.log('dispatch error', action.payload, state)
+            return 111;
+    }
+};
+
+
+
+
+const teamState = ['test']
+
+
+
+function teamReducer(state = teamState, action) {
     
     switch (action.type) {
         case GET_TEAMS:
@@ -37,7 +63,8 @@ function teamReducer(state = [], action) {
         
     }
 
-}
+};
+
 
 
 function pokemonReducer(state = [], action) {
@@ -49,7 +76,7 @@ function pokemonReducer(state = [], action) {
             return state
     }
 
-}
+};
 
 
 function commentReducer(state = {}, action) {
@@ -60,14 +87,23 @@ function commentReducer(state = {}, action) {
             return state
     }
 
-}
+};
 
 const rootReducer = combineReducers({
-    users: userReducer,
+    users: persistReducer(userPersistConfig, usersReducer),
     teams: teamReducer,
     pokemon: pokemonReducer,
     comment: commentReducer
-})
+});
+
+const rootPersistConfig = {
+    key: 'root',
+    storage: storage,
+    whitelist: ['users'],
+    stateReconciler: autoMergeLevel2,
+}
 
 
-export default rootReducer;
+const rootPersisted = persistReducer(rootPersistConfig ,rootReducer)
+
+export default rootPersisted;

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { LOGIN, LOGOUT } from "./constants";
 
 export function signup(user) {
@@ -25,6 +26,22 @@ export function signup(user) {
         .catch(error => console.log("signup error", error))
     }
 
+}
+
+
+export const setUser = () => {
+    return (dispatch) => {
+        dispatch({type: "GETTING_USER" });
+        return axios.get('http://localhost:4000/logged_in', 
+        {withCredentials: true })
+        .then((data) => {
+            console.log('user set', data.data)
+            dispatch({
+                type: "LOGIN_USER",
+                payload: data.data.user
+            })
+        })
+    }
 }
 
 

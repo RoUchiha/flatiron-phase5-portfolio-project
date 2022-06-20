@@ -10,7 +10,8 @@ class AllTeamsContainer extends Component {
     render() {
         console.log(this.props.current_user)
         return (
-            "all teams test"
+            "state test"
+           
         )
     }
 
