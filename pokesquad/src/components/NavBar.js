@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Link, useRouteMatch } from "react-router-dom";
+import { NavLink, Link, useHistory, Redirect, withRouter } from "react-router-dom";
 import { logout } from "../actions/userActions";
 
 import { connect } from "react-redux";
@@ -7,9 +7,11 @@ import { ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE, ADDTEAM } from '../routePa
 
 class Navbar extends Component {
 
+    
+   
 
         handleClick = (event) => {
-            window.location.href=`${event.target.name}`
+            this.props.history.push(`${event.target.name}`)
         }
 
     render() {
@@ -18,8 +20,8 @@ class Navbar extends Component {
                 
                     <div id="navbar-list">
                         <h1>PokeSquad</h1>
-                        <NavLink className='nav-link' to='/home' name='/home' onClick={this.handleClick} >HOMEPAGE</NavLink>
-                        <NavLink className='nav-link' to='/allteams' name='/allteams' onClick={this.handleClick}>ALL TEAMS</NavLink>
+                        <Link className='nav-link' to='/home' name='/home' onClick={this.handleClick} >HOMEPAGE</Link>
+                        <Link className='nav-link' to='/allteams' name='/allteams' >ALL TEAMS</Link>
                         <NavLink className='nav-link' to={MYTEAMS} name='/myteams' onClick={this.handleClick}>MY TEAMS</NavLink>
                         <NavLink className='nav-link' to={ADDTEAM} name='/addteam' onClick={this.handleClick}>ADD TEAM</NavLink>
                         <NavLink className='nav-link' to={POKEDEX} name='/pokedex' onClick={this.handleClick}>POKEDEX</NavLink>
@@ -39,4 +41,4 @@ const mapStateToProps = (state) => {
     }
   }
 
-export default connect(mapStateToProps)(Navbar);
+export default withRouter(Navbar);

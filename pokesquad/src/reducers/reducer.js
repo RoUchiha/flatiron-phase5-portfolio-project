@@ -20,25 +20,26 @@ const userPersistConfig = {
 
 }
 
-const usersReducer = (state = 0, action) => {
+const usersReducer = (state = {}, action) => {
 
     switch (action.type) {
 
         case "GETTING_USER":
-            return 'testing';
+            return state;
+           
 
         case "LOGIN_USER":
             console.log('dispatch success', action.type, action.payload, state)
-            return state + 2;
+            return action.payload;
            
     
         case LOGOUT:
             console.log('logged out', state)
-            return 3;
+            return {};
 
         default:
             console.log('dispatch error', action.payload, state)
-            return 111;
+            return state;
     }
 };
 

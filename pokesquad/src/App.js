@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect  } from 'react-redux';
 import Navbar from './components/NavBar';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, withRouter, Routes, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Pokedex from './containers/Pokedex';
@@ -19,17 +19,17 @@ class App extends Component {
         
         <h1>Testing</h1>
         <Navbar />
-        <Router >
-          
-            <Route path={HOMEPAGE} component={MyTeamsContainer} />
-            <Route path={ALLTEAMS} component={AllTeamsContainer} />
-            <Route path={MYTEAMS} component={MyTeamsContainer} />
-            <Route path={POKEDEX} component={Pokedex} />
-            <Route path={ADDTEAM} component={AddTeamContainer} />
-            <Route path={LOGIN} component={Login} />
-            <Route path={SIGNUP} component={Signup} />
-          
-        </Router>
+        
+          <Switch>
+            <Route exact path={HOMEPAGE} component={MyTeamsContainer} />
+            <Route exact path={ALLTEAMS} component={AllTeamsContainer} />
+            <Route exact path={MYTEAMS} component={MyTeamsContainer} />
+            <Route exact path={POKEDEX} component={Pokedex} />
+            <Route exact path={ADDTEAM} component={AddTeamContainer} />
+            <Route exact path={LOGIN} component={Login} />
+            <Route exact path={SIGNUP} component={Signup} />
+          </Switch>
+        
 
         
       
