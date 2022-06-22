@@ -29,7 +29,7 @@ class Login extends Component {
 
 
     handleSubmit = (event) => {
-        console.log('form submitted')
+        console.log('logging in')
         event.preventDefault();
         axios.post('http://localhost:4000/login', {
             user: {

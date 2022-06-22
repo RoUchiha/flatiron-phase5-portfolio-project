@@ -8,7 +8,7 @@ class AllTeamsContainer extends Component {
 
 
     render() {
-        console.log(this.props.current_user)
+        console.log('state check', this.props.current_user)
         return (
             "state test"
            

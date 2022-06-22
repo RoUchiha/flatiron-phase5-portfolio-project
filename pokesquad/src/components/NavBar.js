@@ -20,11 +20,11 @@ class Navbar extends Component {
                 
                     <div id="navbar-list">
                         <h1>PokeSquad</h1>
-                        <Link className='nav-link' to='/home' name='/home' onClick={this.handleClick} >HOMEPAGE</Link>
+                        <Link className='nav-link' to='/home' name='/home'  >HOMEPAGE</Link>
                         <Link className='nav-link' to='/allteams' name='/allteams' >ALL TEAMS</Link>
-                        <NavLink className='nav-link' to={MYTEAMS} name='/myteams' onClick={this.handleClick}>MY TEAMS</NavLink>
-                        <NavLink className='nav-link' to={ADDTEAM} name='/addteam' onClick={this.handleClick}>ADD TEAM</NavLink>
-                        <NavLink className='nav-link' to={POKEDEX} name='/pokedex' onClick={this.handleClick}>POKEDEX</NavLink>
+                        <NavLink className='nav-link' to={MYTEAMS} name='/myteams' >MY TEAMS</NavLink>
+                        <NavLink className='nav-link' to={ADDTEAM} name='/addteam' >ADD TEAM</NavLink>
+                        <NavLink className='nav-link' to={POKEDEX} name='/pokedex' >POKEDEX</NavLink>
 
                     </div>
 
