@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setUser } from '../actions/userActions';
-import { Link } from 'react-router-dom';
+import { Link, Browser } from 'react-router-dom';
 import '../style/Login.css';
 import axios from 'axios';
 
@@ -44,6 +44,7 @@ class Signup extends Component {
             console.log("signup", data.data)
             if (data.data.status === 'created') {
                 this.props.setUser();
+                this.props.history.push('/allteams')
             }
         })
         .catch(error => console.log("signup error", error))

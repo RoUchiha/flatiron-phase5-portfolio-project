@@ -20,9 +20,10 @@ class TeamsController < ApplicationController
     if @team.save
       user = User.find_by(id: @team.user_id)
       @team.user_username = user.username
-      render json: @team, status: :created, location: @team
+      @team.save
+      render json: {team: @team, status: 'created' }
     else
-      render json: @team.errors, status: :unprocessable_entity
+      render json:  @team.errors, status: :unprocessable_entity
     end
   end
 

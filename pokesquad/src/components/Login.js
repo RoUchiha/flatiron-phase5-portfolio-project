@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login, setUser } from '../actions/userActions';
-import { Link } from 'react-router-dom';
+import { Link, Browser } from 'react-router-dom';
 import '../style/Login.css';
 import axios from 'axios';
 
@@ -42,7 +42,8 @@ class Login extends Component {
         .then(data => {
             console.log("login", data.data)
             if (data.data.logged_in) {
-                this.props.setUser()
+                this.props.setUser();
+                this.props.history.push('/allteams')
             }
         })
         .catch(error => console.log("login error", error))

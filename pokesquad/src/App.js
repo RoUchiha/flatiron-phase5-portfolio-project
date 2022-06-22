@@ -13,6 +13,8 @@ import { ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE, ADDTEAM, SIGNUP } from './
 
 class App extends Component {
 
+  
+
   render() {
     return (
       <div className="App">

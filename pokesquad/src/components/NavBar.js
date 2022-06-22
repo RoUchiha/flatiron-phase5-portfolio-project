@@ -41,4 +41,4 @@ const mapStateToProps = (state) => {
     }
   }
 
-export default withRouter(Navbar);
+export default connect(mapStateToProps)(Navbar);

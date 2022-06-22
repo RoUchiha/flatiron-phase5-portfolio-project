@@ -7,11 +7,12 @@ import Team from '../components/Team.js'
 class MyTeamsContainer extends Component {
 
     render() {
+      console.log('team test', this.props.teams)
         return (
             
-           
+           'team test'
                 
-               `${this.props.current_user.username}`
+               
            
         )
     }
@@ -21,7 +22,8 @@ class MyTeamsContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      current_user: state.users
+      current_user: state.users,
+      teams: state.teams
     }
   }
 

@@ -38,7 +38,7 @@ export const setUser = () => {
             console.log('user set', data.data)
             dispatch({
                 type: "LOGIN_USER",
-                payload: data.data.user
+                payload: data.data
             })
         })
     }

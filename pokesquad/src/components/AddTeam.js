@@ -4,6 +4,8 @@ import { addTeam } from '../actions/teamActions';
 import { DropdownSearchInput } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import axios from 'axios';
+import { ADD_TEAM } from '../actions/constants';
 
 
 class AddNewTeam extends Component {
@@ -11,7 +13,7 @@ class AddNewTeam extends Component {
    constructor(props) {
        super(props);
        this.state = {
-           user_id: this.props.current_user.id,
+           user_id: this.props.current_user.user.id,
            name: '',
            pokemon1: '',
            pokemon2: '',
@@ -30,10 +32,33 @@ class AddNewTeam extends Component {
    }
 
    handleSubmit = (event) => {
-        event.preventDefault();
-        this.props.addTeamDispatch(this.state);
-        window.location.href=("/myteams")
-   }
+    event.preventDefault();
+    axios.post('http://localhost:4000/teams', {
+        user: {
+            user_id: this.props.current_user.user.id,
+           name: this.state.name,
+           pokemon1: this.state.pokemon1,
+           pokemon2: this.state.pokemon2,
+           pokemon3: this.state.pokemon3,
+           pokemon4: this.state.pokemon4,
+           pokemon5: this.state.pokemon5,
+           pokemon6: this.state.pokemon6 
+        }
+    },
+    { withCredentials: true }
+    )
+    .then(data => {
+        console.log("creating team", data.data)
+        if (data.data.status === 'created') {
+            this.props.addTeamDispatch(data.data.team);
+            
+        }
+    })
+    .catch(error => console.log("login error", error))
+   
+}
+
+
    
    buildOptions() {
     var arr = [];
@@ -100,7 +125,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addTeamDispatch: team => dispatch(addTeam(team))
+        addTeamDispatch: team => dispatch({type: ADD_TEAM, payload: team})
     }
 }
 
