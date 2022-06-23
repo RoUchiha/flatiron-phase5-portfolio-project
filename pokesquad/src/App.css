@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: pink;
 }
 
 .App-logo {
@@ -53,6 +54,18 @@
   background-color: cyan;
 }
 
+.logout{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  padding: 4px;
+  margin: 0 3px 3px;
+  background: red;
+  color: red;
+  background-color: cyan;
+}
+
 .add-team-form{
   padding-top: 50px;
   
@@ -60,5 +73,10 @@
 
 
 .pokemon{
-  border: 1px solid black;
+  border: 2px solid black;
+  height: 35vh;
+  width: 25vh;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
 }

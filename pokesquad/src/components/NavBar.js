@@ -20,6 +20,7 @@ class Navbar extends Component {
                 
                     <div id="navbar-list">
                         <h1>PokeSquad</h1>
+                        <Link className='logout'  to='/logout' name='/logout' > LOGOUT </Link>
                         <Link className='nav-link' to='/home' name='/home'  >HOMEPAGE</Link>
                         <Link className='nav-link' to='/allteams' name='/allteams' >ALL TEAMS</Link>
                         <NavLink className='nav-link' to={MYTEAMS} name='/myteams' >MY TEAMS</NavLink>
