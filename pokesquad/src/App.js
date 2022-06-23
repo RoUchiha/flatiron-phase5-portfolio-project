@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect  } from 'react-redux';
 import Navbar from './components/NavBar';
-import { Route, withRouter, Routes, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, withRouter, Redirect, Routes, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Pokedex from './containers/Pokedex';
@@ -17,6 +17,8 @@ class App extends Component {
   
 
   render() {
+    const logged_in = this.props.current_user.logged_in;
+
     return (
       <div className="App">
         
@@ -24,7 +26,7 @@ class App extends Component {
         <Navbar />
         
           <Switch>
-            <Route exact path={HOMEPAGE} component={Home} />
+            <Route exact path={HOMEPAGE} >{logged_in ? <Redirect to='/myteams' /> : <Home />} </Route>
             <Route exact path={ALLTEAMS} component={AllTeamsContainer} />
             <Route exact path={MYTEAMS} component={MyTeamsContainer} />
             <Route exact path={POKEDEX} component={Pokedex} />
