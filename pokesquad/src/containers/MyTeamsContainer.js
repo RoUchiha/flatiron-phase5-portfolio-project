@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTeams } from '../actions/teamActions';
+import { setTeams } from '../actions/teamActions';
 import Team from '../components/Team.js'
 
 
@@ -16,7 +16,9 @@ class MyTeamsContainer extends Component {
     fetch('http://localhost:4000/teams')
     .then(response => response.json())
     .then(data => this.setState({ allTeams: data}) )
-    .catch(error => console.log("fetch teams", error))
+    .catch(error => console.log("fetch teams", error));
+
+    this.props.setTeams();
 }
 
 
@@ -27,7 +29,8 @@ class MyTeamsContainer extends Component {
       const myTeams = this.state.allTeams.filter( team => 
         team.user_id == this.props.current_user.user.id)
 
-      console.log('team test', this.props.teams, myTeams)
+      console.log('my teams test', myTeams)
+      console.log('teams store check', this.props.teams)
         return (
             
            'team test'
@@ -47,4 +50,6 @@ const mapStateToProps = (state) => {
     }
   }
 
-export default connect(mapStateToProps)(MyTeamsContainer);
+
+
+export default connect(mapStateToProps, { setTeams })(MyTeamsContainer);

@@ -8,7 +8,8 @@ class AllTeamsContainer extends Component {
 
 
     render() {
-        console.log('state check', this.props.current_user)
+        console.log('user state check', this.props.current_user)
+        console.log('all teams check', this.props.teams)
         return (
           <div>
             
@@ -23,7 +24,8 @@ class AllTeamsContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      current_user: state.users
+      current_user: state.users,
+      teams: state.teams
     }
   }
 

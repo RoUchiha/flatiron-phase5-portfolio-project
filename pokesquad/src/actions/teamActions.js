@@ -1,4 +1,7 @@
 import { GET_TEAMS, ADD_TEAM } from "./constants";
+import axios from "axios";
+
+
 
 export function fetchTeams() {
 
@@ -12,6 +15,21 @@ export function fetchTeams() {
     }
 
 }
+
+export const setTeams = () => {
+    return (dispatch) => {
+        dispatch({type: "GETTING_TEAMS" });
+        return axios.get('http://localhost:4000/teams')
+        .then((data) => {
+            console.log('teams set', data.data)
+            dispatch({
+                type: GET_TEAMS,
+                payload: data.data
+            })
+        })
+    }
+}
+
 
 
 export function addTeam(team) {
