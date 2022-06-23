@@ -8,8 +8,6 @@ import { ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE, ADDTEAM } from '../routePa
 class Navbar extends Component {
 
     
-   
-
         handleClick = (event) => {
             this.props.history.push(`${event.target.name}`)
         }

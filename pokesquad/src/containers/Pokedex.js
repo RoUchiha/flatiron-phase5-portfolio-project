@@ -22,7 +22,7 @@ class Pokedex extends Component {
 
 
     render() {
-       
+        const fullPokedex = this.state.allPokemon
 
         console.log('pokemon', this.state.allPokemon)
         return (

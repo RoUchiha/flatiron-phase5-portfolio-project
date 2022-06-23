@@ -12,10 +12,6 @@ import PokemonCollection from './PokemonCollection';
 
 class AddNewTeam extends Component {
 
-    
-  
-    
-
    constructor(props) {
        super(props);
        this.state = {
