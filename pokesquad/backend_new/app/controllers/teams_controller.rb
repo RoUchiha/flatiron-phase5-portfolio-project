@@ -1,6 +1,8 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :update, :destroy]
 
+  
+
   # GET /teams
   def index
     @teams = Team.all
@@ -16,12 +18,13 @@ class TeamsController < ApplicationController
   # POST /teams
   def create
     @team = Team.new(team_params)
+    
 
     if @team.save
-      user = User.find_by(id: @team.user_id)
-      @team.user_username = user.username
-      @team.save
-      render json: {team: @team, status: 'created' }
+      
+      
+      
+      render json: {team: @team, status: 'created'}
     else
       render json:  @team.errors, status: :unprocessable_entity
     end
@@ -49,6 +52,6 @@ class TeamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_params
-      params.require(:team).permit(:name, :user_id, :pokemon1, :pokemon2, :pokemon3, :pokemon4, :pokemon5, :pokemon6)
+      params.require(:team).permit(:name, :user_id, :user_username, :pokemon1, :pokemon2, :pokemon3, :pokemon4, :pokemon5, :pokemon6)
     end
 end

@@ -10,17 +10,22 @@ import { ADD_TEAM } from '../actions/constants';
 
 class AddNewTeam extends Component {
 
+    
+  
+    
+
    constructor(props) {
        super(props);
        this.state = {
-           user_id: this.props.current_user.user.id,
+            user_id: this.props.current_user.user.id,
+            user_username: this.props.current_user.user.username,
            name: '',
-           pokemon1: '',
-           pokemon2: '',
-           pokemon3: '',
-           pokemon4: '',
-           pokemon5: '',
-           pokemon6: ''
+           pokemon1: 0,
+           pokemon2: 0,
+           pokemon3: 0,
+           pokemon4: 0,
+           pokemon5: 0,
+           pokemon6: 0
        }
    }
 
@@ -34,8 +39,9 @@ class AddNewTeam extends Component {
    handleSubmit = (event) => {
     event.preventDefault();
     axios.post('http://localhost:4000/teams', {
-        user: {
-            user_id: this.props.current_user.user.id,
+        team: {
+            user_id: this.state.user_id,
+            user_username: this.state.user_username,
            name: this.state.name,
            pokemon1: this.state.pokemon1,
            pokemon2: this.state.pokemon2,
@@ -45,7 +51,7 @@ class AddNewTeam extends Component {
            pokemon6: this.state.pokemon6 
         }
     },
-    { withCredentials: true }
+    
     )
     .then(data => {
         console.log("creating team", data.data)

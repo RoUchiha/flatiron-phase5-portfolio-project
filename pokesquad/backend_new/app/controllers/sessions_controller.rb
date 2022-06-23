@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
         if user
             session[:user_id] = user.id 
+            session[:username] = user.username
             render json: { 
             status: 'created', 
             logged_in: true,
@@ -25,7 +26,8 @@ class SessionsController < ApplicationController
         if @current_user
             render json: {
                 logged_in: true,
-                user: @current_user
+                user: @current_user,
+                session_id: session[:user_id]
             }
         else
             render json: {
