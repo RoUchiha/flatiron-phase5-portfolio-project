@@ -7,7 +7,8 @@ export function fetchPokemon() {
         .then(response => {
             return response.json()
         })
-        .then(data => dispatch({ type: GET_POKEMON, payload: data }))
+        .then(data => 
+            dispatch({ type: GET_POKEMON, payload: data.data }))
         .catch(error => console.log("fetch pokemon", error))
     }
 

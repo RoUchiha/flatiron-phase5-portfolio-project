@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Pokedex from '../containers/Pokedex';
 import { addTeam } from '../actions/teamActions';
-import { DropdownSearchInput } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { DropdownSearchInput, Card } from 'semantic-ui-react';
+import { Link, Browser } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { ADD_TEAM } from '../actions/constants';
+import Pokemon from './Pokemon';
+import PokemonCollection from './PokemonCollection';
 
 
 class AddNewTeam extends Component {
@@ -57,6 +59,7 @@ class AddNewTeam extends Component {
         console.log("creating team", data.data)
         if (data.data.status === 'created') {
             this.props.addTeamDispatch(data.data.team);
+            this.props.history.push('/myteams')
             
         }
     })
@@ -114,6 +117,14 @@ class AddNewTeam extends Component {
 
                         
                </form>
+
+              {/* <div>
+                <Card.Group itemsPerRow={6} >
+                    <Pokemon />
+
+                </Card.Group>
+
+                </div> */}
 
 
            </div>
