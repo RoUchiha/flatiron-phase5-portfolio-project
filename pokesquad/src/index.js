@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import rootPersisted from "./reducers/reducer.js";
 import App from './App.js'
 import { composeWithDevTools } from 'redux-devtools-extension'
-
+import './index.css'
 
 const store = createStore(rootPersisted, composeWithDevTools( applyMiddleware(thunkMiddleware)));
 console.log(store.getState())

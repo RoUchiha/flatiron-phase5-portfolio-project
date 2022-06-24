@@ -16,8 +16,9 @@ class AddTeamContainer extends Component {
 
                 <br />
 
-
+                <div className='add-team-pokedex'>
                 <Pokedex />
+                </div>
 
             </Container>
         )

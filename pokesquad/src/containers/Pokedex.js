@@ -27,15 +27,18 @@ class Pokedex extends Component {
         console.log('pokemon', this.state.allPokemon)
         return (
 
-            <div>
+            <div className='pokedex centered'>
+                <div className='pokedex-title'>
+                    <h2>POKEDEX</h2>
+                </div>
+            <Container className='pokedex-scroll'>
+                
 
-            <h2>POKEDEX</h2>
-
-            <Container>
-
-                <Card.Group itemsPerRow={6}>
+                <Card.Group itemsPerRow={6} className='pokedex-group'>
                     {this.state.allPokemon.map(pokemon => (
-                        <Pokemon key={pokemon.id} name={pokemon.name} pokedex={pokemon.pokedex} sprite={pokemon.sprite} /> ))}
+                      <Card>
+                        <Pokemon key={pokemon.id} name={pokemon.name} pokedex={pokemon.pokedex} sprite={pokemon.sprite} />
+                        </Card> ))}
 
                 </Card.Group>                
         

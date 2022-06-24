@@ -12,7 +12,7 @@ class AllTeamsContainer extends Component {
         console.log('all teams check', this.props.teams)
         return (
           <div>
-            
+            <h2>all teams placeholder</h2>
            </div>
         )
     }

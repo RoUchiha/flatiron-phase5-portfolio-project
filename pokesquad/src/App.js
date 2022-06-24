@@ -26,6 +26,7 @@ class App extends Component {
         <Navbar />
         
           <Switch>
+            <Route exact path='/' >{<Redirect to='/home' />}</Route>
             <Route exact path={HOMEPAGE} >{logged_in ? <Redirect to='/myteams' /> : <Home />} </Route>
             <Route exact path={ALLTEAMS} component={AllTeamsContainer} />
             <Route exact path={MYTEAMS} component={MyTeamsContainer} />
