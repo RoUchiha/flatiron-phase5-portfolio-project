@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  margin-top: -35px;
+  margin-top: -20px;
   background-color: pink;
   background-image: url('https://cutewallpaper.org/21/pokemon-pattern-background/Anyone-else-likes-Nintendos-Pokemon-background-pattern-Imgur.jpg');
   margin-left: 200px;
@@ -41,9 +41,23 @@
   }
 }
 
+.welcome-main{
+  font-family: cursive;
+  font-size: 35px;
+}
+
+.welcome-sub{
+  font-family: cursive;
+}
 
 .login-container{
   font-weight: 700;
+  text-decoration: underline;
+}
+
+.signup-container{
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .navbar-title{
@@ -99,6 +113,13 @@
 .add-team-form{
   padding-top: 50px;
   size: 200px;
+  margin-top: -20px;
+}
+
+.add-team-title{
+  font-family: cursive;
+  font-weight: 700;
+  font-size: 30px;
 }
 
 .divider{
@@ -111,19 +132,39 @@
 .pokemon{
   border: 3px solid bold black;
   background-color: silver;
-  height: 15vh;
-  width: 15vh;
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f21ec3d0-eacb-4969-9c1e-5addd6baf0a8/d535244-ac1e4982-3663-4e90-906b-5362fe93a41b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2YyMWVjM2QwLWVhY2ItNDk2OS05YzFlLTVhZGRkNmJhZjBhOFwvZDUzNTI0NC1hYzFlNDk4Mi0zNjYzLTRlOTAtOTA2Yi01MzYyZmU5M2E0MWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.X0fBtj7PmODhMsFNzEbwQthU8rMEJPYtgA2hGHb17Co');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 0px;
+  background-size: contain;
+  background-size: 20vh 20vh;
+  height: 20vh;
+  width: 20vh;
   margin: 10px;
   text-align: center;
   cursor: pointer;
   float: left;
 }
 
+.sprite{
+margin-top: 40px;
+}
+
+.pokemon-pokedex{
+  margin-top: -169px;
+  font-weight: 600;
+}
+
+.pokemon-name{
+  margin-top: 7px;
+  font-weight: 500
+}
+
 
 
 .pokedex-scroll{
   background-color: black;
-  height: 75.3vh;
+  height: 76.7vh;
   overflow-y: scroll;
   padding-left: 30px;
   

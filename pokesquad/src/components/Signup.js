@@ -60,7 +60,7 @@ class Signup extends Component {
                     <br />
 
                     <form onSubmit={this.handleSubmit}>
-                        <label>Username</label>
+                        <label>Username: </label>
                         <input 
                         onChange={this.handleUsernameChange}
                         type="text"
@@ -70,7 +70,7 @@ class Signup extends Component {
                         required
                         />
 
-                        <label>Password</label>
+                        <label>Password: </label>
                         <input 
                         onChange={this.handlePasswordChange}
                         type='password'

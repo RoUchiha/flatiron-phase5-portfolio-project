@@ -18,21 +18,29 @@ class Home extends Component {
             <div className='home'>
 
             <br />
-                <h1>Welcome to Pokesquad</h1>
-                <h2>a Pokemon team creator</h2>
+                <h1 className='welcome-main'>Welcome to Pokesquad</h1>
+                <h2 className='welcome-sub'>a React/Rails Pokemon Team Creator</h2>
 
-                <br /><br />
-
-                <Login />
                 <br />
+                
                 <br />
                 <hr 
                     className='divider'
                 />
+
+                <Login />
+                
                 <br />
+                <hr 
+                    className='divider'
+                />
+                
                 <Signup />
 
-                <br /><br />
+                <br />
+                <hr 
+                    className='divider'
+                />
                         
             </div>
     

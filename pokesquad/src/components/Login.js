@@ -58,6 +58,7 @@ class Login extends Component {
                 <h2>LOGIN</h2>
                 <br />
                 <form onSubmit={this.handleSubmit}>
+                    <label>Username: </label> 
                     <input 
                     onChange={this.handleUsernameChange}
                     type="text"
@@ -66,7 +67,7 @@ class Login extends Component {
                     value={this.state.username}
                     required
                     />
-
+                    <label>Password: </label>
                     <input 
                     onChange={this.handlePasswordChange}
                     type="password"

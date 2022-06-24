@@ -13,8 +13,8 @@ class AddTeamContainer extends Component {
         return (
 
             <div>
-                <br /><br />
-                <h2>Create a new team!</h2>
+                <br />
+                <h2 className='add-team-title'>Create a new team!</h2>
             
             <Container>
 
