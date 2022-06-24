@@ -11,7 +11,13 @@ class AddTeamContainer extends Component {
     render() {
 
         return (
+
+            <div>
+                <br /><br />
+                <h2>Create a new team!</h2>
+            
             <Container>
+
                 <AddNewTeam />
 
                 <br />
@@ -21,6 +27,7 @@ class AddTeamContainer extends Component {
                 </div>
 
             </Container>
+            </div>
         )
     }
 

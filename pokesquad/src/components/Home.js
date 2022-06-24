@@ -15,15 +15,24 @@ class Home extends Component {
 
             
 
-            <div>
+            <div className='home'>
 
-              
+            <br />
                 <h1>Welcome to Pokesquad</h1>
                 <h2>a Pokemon team creator</h2>
 
-                <Login />
+                <br /><br />
 
+                <Login />
+                <br />
+                <br />
+                <hr 
+                    className='divider'
+                />
+                <br />
                 <Signup />
+
+                <br /><br />
                         
             </div>
     

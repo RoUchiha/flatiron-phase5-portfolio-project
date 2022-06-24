@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         
-        <h1>Testing</h1>
+       
         <Navbar />
         
           <Switch>

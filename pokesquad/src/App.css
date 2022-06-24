@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  margin-top: -35px;
   background-color: pink;
+  background-image: url('https://cutewallpaper.org/21/pokemon-pattern-background/Anyone-else-likes-Nintendos-Pokemon-background-pattern-Imgur.jpg');
   margin-left: 200px;
 }
 
@@ -39,6 +41,18 @@
   }
 }
 
+
+.login-container{
+  font-weight: 700;
+}
+
+.navbar-title{
+  margin-top: 70px;
+  background-image: url('https://fontmeme.com/permalink/220624/1662f752a8e1e14e95e08b3e5ee1d741.png');
+  height: 68px;
+  color: #ffcc03;
+}
+
 #navbar{
   display: block;
   width: 200px;
@@ -48,6 +62,8 @@
   left: 0;
   background-color: yellow;
   background-image: url('data:image/png;base64,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');
+  background-position-x: -8px;
+  background-size: contain;
   float: left;
 }
 
@@ -57,10 +73,10 @@
   display: inline-block;
   width: 100px;
   padding: 4px;
-  margin:  50px 30px;
+  margin:  40px 30px;
   background: red;
-  color: black;
-  background-color: cyan;
+  color: blue;
+  background-color: #ffcc03;
   text-align: center;
   
 }
@@ -70,6 +86,7 @@
   font-weight: bold;
   position: absolute;
   bottom: 0;
+  margin-bottom: 5px !important;
   left: 30px;
   width: 100px;
   padding: 4px;
@@ -81,7 +98,13 @@
 
 .add-team-form{
   padding-top: 50px;
-  
+  size: 200px;
+}
+
+.divider{
+  height: 5px;
+  background-color: black;
+  border: none;
 }
 
 

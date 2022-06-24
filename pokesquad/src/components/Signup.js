@@ -57,7 +57,7 @@ class Signup extends Component {
             <div className='signup-parent-container'>
                 <div className='signup-container'>
                     <h2>SIGN UP</h2>
-                    <hr />
+                    <br />
 
                     <form onSubmit={this.handleSubmit}>
                         <label>Username</label>
@@ -88,7 +88,7 @@ class Signup extends Component {
                         </button>
 
                     </form>
-                    <p id="login-p-tag"> Have an account already? <Link to="/login">Login here</Link></p>
+                    {/* <p id="login-p-tag"> Have an account already? <Link to="/login">Login here</Link></p> */}
                 </div>
             </div>
         )
