@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Pokedex from '../containers/Pokedex';
+import Pokedex from './Pokedex';
 import { addTeam } from '../actions/teamActions';
 import { DropdownSearchInput, Card } from 'semantic-ui-react';
 import { Link, Browser } from 'react-router-dom';

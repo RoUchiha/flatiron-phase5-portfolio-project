@@ -13,6 +13,12 @@ class AllTeamsContainer extends Component {
         return (
           <div>
             <h2>all teams placeholder</h2>
+
+            <div>
+
+              
+
+            </div>
            </div>
         )
     }

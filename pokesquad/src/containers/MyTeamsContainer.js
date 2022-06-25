@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setTeams } from '../actions/teamActions';
 import Team from '../components/Team.js'
+import { Container, Card } from 'semantic-ui-react'
 
 
 class MyTeamsContainer extends Component {
@@ -33,7 +34,21 @@ class MyTeamsContainer extends Component {
       console.log('teams store check', this.props.teams)
         return (
             
-           'team test'
+           <div>
+
+              <Container>
+
+                <Card.Group itemsPerRow={2} className='team-group'>
+                  {myTeams.map(team => (
+                    <Card>
+                        <Team key={team.id} team={team} />
+                    </Card>))}
+
+                </Card.Group>
+
+              </Container>
+
+           </div>
                 
                
            

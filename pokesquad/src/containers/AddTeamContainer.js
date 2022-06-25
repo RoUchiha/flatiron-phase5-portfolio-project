@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css'
 import AddNewTeam from "../components/AddTeam";
-import Pokedex from "./Pokedex";
+import Pokedex from "../components/Pokedex";
 import { Container } from 'semantic-ui-react'
+import PokedexContainer from './PokedexContainer';
 
 
 class AddTeamContainer extends Component {
@@ -23,7 +24,7 @@ class AddTeamContainer extends Component {
                 <br />
 
                 <div className='add-team-pokedex'>
-                <Pokedex />
+                <PokedexContainer />
                 </div>
 
             </Container>

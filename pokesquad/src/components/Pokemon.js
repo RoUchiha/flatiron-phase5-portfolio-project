@@ -3,10 +3,7 @@ import { Card } from 'semantic-ui-react';
 
 const Pokemon = ({ key, name, pokedex, sprite }) => {
 
-    const styles = {
-        border: '1px solid black'
-    }
-        
+    
 
     return (
         <Card>

@@ -5,26 +5,13 @@ import { fetchPokemon } from '../actions/pokemonActions.js';
 import PokemonCollection from '../components/PokemonCollection.js';
 
 
-class Pokedex extends Component {
+const Pokedex = ({ allPokemon }) => {
 
-    state = {
-        allPokemon: []
-    }
+   
 
+        
 
-
-    componentDidMount() {
-        fetch('http://localhost:4000/pokemons')
-        .then(response => response.json())
-        .then(data => this.setState({ allPokemon: data}) )
-        .catch(error => console.log("fetch pokemon", error))
-    }
-
-
-    render() {
-        const fullPokedex = this.state.allPokemon
-
-        console.log('pokemon', this.state.allPokemon)
+        console.log('pokemon', allPokemon)
         return (
 
             <div className='pokedex centered'>
@@ -35,7 +22,7 @@ class Pokedex extends Component {
                 
 
                 <Card.Group itemsPerRow={6} className='pokedex-group'>
-                    {this.state.allPokemon.map(pokemon => (
+                    {allPokemon.map(pokemon => (
                       <Card>
                         <Pokemon key={pokemon.id} name={pokemon.name} pokedex={pokemon.pokedex} sprite={pokemon.sprite} />
                         </Card> ))}
@@ -45,7 +32,7 @@ class Pokedex extends Component {
             </Container>
             </div>
         )
-    }
+    
 
 
 }

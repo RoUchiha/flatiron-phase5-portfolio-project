@@ -164,9 +164,12 @@ margin-top: 40px;
 
 .pokedex-scroll{
   background-color: black;
+  background-image: url('https://dl.airtable.com/.exploreCoverImages/5bc96e992eb75b3e452cb011840ae7a4/6cf7e370');
+  background-size: auto;
+
   height: 76.7vh;
   overflow-y: scroll;
-  padding-left: 30px;
+  padding-left: 15px;
   
 }
 

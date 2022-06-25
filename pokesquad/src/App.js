@@ -4,7 +4,8 @@ import Navbar from './components/NavBar';
 import { Route, withRouter, Redirect, Routes, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Pokedex from './containers/Pokedex';
+import Pokedex from './components/Pokedex';
+import PokedexContainer from './containers/PokedexContainer';
 import Home from './components/Home';
 import AllTeamsContainer from './containers/AllTeamsContainer';
 import MyTeamsContainer from './containers/MyTeamsContainer';
@@ -30,7 +31,7 @@ class App extends Component {
             <Route exact path={HOMEPAGE} >{logged_in ? <Redirect to='/myteams' /> : <Home />} </Route>
             <Route exact path={ALLTEAMS} component={AllTeamsContainer} />
             <Route exact path={MYTEAMS} component={MyTeamsContainer} />
-            <Route exact path={POKEDEX} component={Pokedex} />
+            <Route exact path={POKEDEX} component={PokedexContainer} />
             <Route exact path={ADDTEAM} component={AddTeamContainer} />
             <Route exact path={LOGIN} component={Login} />
             <Route exact path={SIGNUP} component={Signup} />
