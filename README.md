@@ -3,7 +3,7 @@
 
 
 
-<h1 align="center">Welcome to PokeSquad 
+<h1 align="center">Welcome to PokeSquad <br>
 (Flatiron Phase 5 portfolio project) 👋</h1>
 
 <p>
