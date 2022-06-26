@@ -1,13 +1,13 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
 
-const Pokemon = ({ key, name, pokedex, sprite }) => {
+const Pokemon = ({ id, name, pokedex, sprite }) => {
 
     
 
     return (
         <Card>
-            <div style={{border: '1px solid black'}} className='pokemon' key={key}>
+            <div style={{border: '1px solid black'}} className='pokemon' id={id}>
 
 
                 <div className='sprite'>
@@ -17,7 +17,7 @@ const Pokemon = ({ key, name, pokedex, sprite }) => {
                 <div className='pokemon-info'>
 
                     <div className='pokemon-name'>
-                        {name.toUpperCase()}
+                        {name}
                     </div>
                     
                     <div className='pokemon-pokedex'>

@@ -29,10 +29,10 @@ class App extends Component {
           <Switch>
             <Route exact path='/' >{<Redirect to='/home' />}</Route>
             <Route exact path={HOMEPAGE} >{logged_in ? <Redirect to='/myteams' /> : <Home />} </Route>
-            <Route exact path={ALLTEAMS} component={AllTeamsContainer} />
-            <Route exact path={MYTEAMS} component={MyTeamsContainer} />
+            <Route exact path={ALLTEAMS} component={AllTeamsContainer}>{!logged_in ? <Redirect to='/home' /> : <AllTeamsContainer />}</Route>
+            <Route exact path={MYTEAMS} >{!logged_in ? <Redirect to='/home' /> : <MyTeamsContainer />}</Route>
             <Route exact path={POKEDEX} component={PokedexContainer} />
-            <Route exact path={ADDTEAM} component={AddTeamContainer} />
+            <Route exact path={ADDTEAM} component={AddTeamContainer} >{!logged_in ? <Redirect to='/home' /> : <AddTeamContainer />}</Route>
             <Route exact path={LOGIN} component={Login} />
             <Route exact path={SIGNUP} component={Signup} />
             <Route exact path={LOGOUT} component={Home}/>

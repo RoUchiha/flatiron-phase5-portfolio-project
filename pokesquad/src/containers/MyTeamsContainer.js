@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setTeams } from '../actions/teamActions';
 import Team from '../components/Team.js'
+import TeamCollection from '../components/TeamCollection';
 import { Container, Card } from 'semantic-ui-react'
 
 
@@ -28,10 +29,12 @@ class MyTeamsContainer extends Component {
     render() {
 
       const myTeams = this.state.allTeams.filter( team => 
-        team.user_id == this.props.current_user.user.id)
+        team.user_id === this.props.current_user.user.id)
 
       console.log('my teams test', myTeams)
       console.log('teams store check', this.props.teams)
+
+    
         return (
             
            <div>
@@ -41,7 +44,7 @@ class MyTeamsContainer extends Component {
                 <Card.Group itemsPerRow={2} className='team-group'>
                   {myTeams.map(team => (
                     <Card>
-                        <Team key={team.id} team={team} />
+                        <TeamCollection id={team.id} name={team.name} user_username={team.user_username} pokemon1={team.pokemon1} pokemon2={team.pokemon2} pokemon3={team.pokemon3} pokemon4={team.pokemon4} pokemon5={team.pokemon5} pokemon6={team.pokemon6} />
                     </Card>))}
 
                 </Card.Group>

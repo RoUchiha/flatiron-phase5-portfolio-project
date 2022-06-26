@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Pokedex from './Pokedex';
 import { addTeam } from '../actions/teamActions';
 import { DropdownSearchInput, Card } from 'semantic-ui-react';
-import { Link, Browser } from 'react-router-dom';
+import { Link, Browser, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { ADD_TEAM } from '../actions/constants';
@@ -142,4 +142,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddNewTeam)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddNewTeam))

@@ -24,7 +24,7 @@ const Pokedex = ({ allPokemon }) => {
                 <Card.Group itemsPerRow={6} className='pokedex-group'>
                     {allPokemon.map(pokemon => (
                       <Card>
-                        <Pokemon key={pokemon.id} name={pokemon.name} pokedex={pokemon.pokedex} sprite={pokemon.sprite} />
+                        <Pokemon id={pokemon.id} name={pokemon.name} pokedex={pokemon.pokedex} sprite={pokemon.sprite} />
                         </Card> ))}
 
                 </Card.Group>                
