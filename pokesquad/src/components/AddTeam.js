@@ -80,7 +80,7 @@ class AddNewTeam extends Component {
        console.log(this.props.current_user)
        return (
            <div className='add-team-form'>
-               <form onSubmit={this.handleSubmit}>
+               <form className='add-team-form-form' onSubmit={this.handleSubmit}>
 
                     <input type="text" name="name" value={this.state.name} placeholder="Team Name" onChange={this.handleChange} required />
 

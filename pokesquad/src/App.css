@@ -101,7 +101,7 @@
   position: absolute;
   bottom: 0;
   margin-bottom: 5px !important;
-  left: 30px;
+  left: 40px;
   width: 100px;
   padding: 4px;
   margin: 0 3px 3px;
@@ -113,7 +113,13 @@
 .add-team-form{
   padding-top: 50px;
   size: 200px;
-  margin-top: -20px;
+  height: 23px;
+  margin-top: -26px;
+  border: 3px black;
+  border-style: solid;
+  font-weight: bold;
+  background-image: url('https://wallpaperaccess.com/full/1794019.png');
+  background-size: contain;
 }
 
 .add-team-title{
