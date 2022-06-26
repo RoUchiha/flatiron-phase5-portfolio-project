@@ -1,9 +1,10 @@
-# flatiron-phase5-portfolio-project
 
 
 
 
-<h1 align="center">Welcome to PokeSquad (Flatiron Phase 5 portfolio project) 👋</h1>
+
+<h1 align="center">Welcome to PokeSquad 
+(Flatiron Phase 5 portfolio project) 👋</h1>
 
 <p>
   <a href="https://github.com/RoUchiha/flatiron-phase5-portfolio-project/blob/main/LICENSE" target="_blank">
