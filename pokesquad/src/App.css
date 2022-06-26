@@ -185,5 +185,70 @@ margin-top: 40px;
   background-color: black;
   margin: 10px;
   margin-left: -20px;
-  margin-bottom: -20px
+  margin-bottom: -20px;
+}
+
+
+.team{
+  float: top;
+  border: 3px black;
+  border-style: solid;
+  width: 140vh;
+  height: 30vh;
+  text-align: center;
+  margin-left: 200px;
+  background-image: url('https://cdn.wallpapersafari.com/80/75/bmOt0A.jpg');
+  background-size: 70vh 30vh;
+  background-repeat: repeat-x;
+  
+}
+
+.team-info{
+  padding-top: 5px;
+  margin-left: -1050px;
+  text-decoration: solid underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.team-members{
+  padding-top: 15px;
+  padding-left: 28px;
+}
+
+.team-divider{
+  color: #ffffff;
+  font-size: 5px;
+}
+
+.my-team-scroll{
+  overflow-y: scroll;
+  height: 90.1vh;
+}
+
+.all-team-scroll{
+  overflow-y: scroll;
+  height: 90.1vh;
+}
+
+.my-teams-title{
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: cursive;
+}
+
+.all-teams-title{
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: cursive;
+}
+
+.pokedex-header{
+  height: 20vh;
+  background-image: url('https://i.pinimg.com/originals/f1/fd/74/f1fd74abdde20240ce7a6c0aa0a02dd3.gif');
+  background-size: 183.7vh 25vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 19px;
+  margin-bottom: -20px;
 }

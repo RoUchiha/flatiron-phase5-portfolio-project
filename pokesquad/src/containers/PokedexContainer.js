@@ -25,9 +25,15 @@ class PokedexContainer extends Component {
 
         return(
 
+
+
+            <div>
+                <h2 className="pokedex-header"></h2>
+                <Pokedex allPokemon={this.state.allPokemon} />
+            </div>
             
                 
-            <Pokedex allPokemon={this.state.allPokemon} />
+            
 
             
         )

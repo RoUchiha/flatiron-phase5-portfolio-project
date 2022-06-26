@@ -93,7 +93,7 @@ render() {
     <Card.Group itemsPerRow={3}>
         
         <Team id={this.props.id} name={this.props.name} user_username={this.props.user_username} pokemon1={this.state.pokemon1} pokemon2={this.state.pokemon2} pokemon3={this.state.pokemon3} pokemon4={this.state.pokemon4} pokemon5={this.state.pokemon5} pokemon6={this.state.pokemon6} />
-
+        <h2 className="team-divider">.</h2>
     </Card.Group>
     )
 

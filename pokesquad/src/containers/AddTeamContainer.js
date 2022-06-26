@@ -9,6 +9,20 @@ import PokedexContainer from './PokedexContainer';
 class AddTeamContainer extends Component {
 
 
+    state = {
+        allPokemon: []
+    }
+
+
+
+    componentDidMount() {
+        fetch('http://localhost:4000/pokemons')
+        .then(response => response.json())
+        .then(data => this.setState({ allPokemon: data}) )
+        .catch(error => console.log("fetch pokemon", error))
+    }
+
+
     render() {
 
         return (
@@ -24,7 +38,7 @@ class AddTeamContainer extends Component {
                 <br />
 
                 <div className='add-team-pokedex'>
-                <PokedexContainer />
+                <Pokedex  allPokemon={this.state.allPokemon} />
                 </div>
 
             </Container>

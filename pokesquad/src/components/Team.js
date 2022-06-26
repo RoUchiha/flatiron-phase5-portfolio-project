@@ -14,7 +14,7 @@ const Team = ({id, name, user_username, pokemon1, pokemon2, pokemon3, pokemon4, 
     teamMembers.push(pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6)
    
     
-    console.log('team', teamMembers)
+    
     return (
         
 
@@ -33,8 +33,10 @@ const Team = ({id, name, user_username, pokemon1, pokemon2, pokemon3, pokemon4, 
 
             <div className='team-members'>
             {teamMembers.map(pokemon => (
-                console.log('member', pokemon)
-                      ))}
+                
+                      <Card>
+                        <Pokemon key={pokemon.id} id={pokemon.id} name={pokemon.name} pokedex={pokemon.pokedex} sprite={pokemon.sprite} />
+                        </Card> ))}
             </div>
             
         </div>
