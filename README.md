@@ -22,7 +22,7 @@
 
 ```
   - first `cd pokesquad`
-  - run `npm start`
+  - run `npm i && npm start`
 
   - then `cd pokesquad/backend_new`
   - run `rails db:seed`
