@@ -3,8 +3,8 @@
 
 
 
-<h1 align="center">Welcome to PokeSquad <br>
-(Flatiron Phase 5 portfolio project) 👋</h1>
+<h1 align="center">Welcome to PokeSquad! <br>
+(Flatiron School phase 5 portfolio project) 👋</h1>
 
 <p>
   <a href="https://github.com/RoUchiha/flatiron-phase5-portfolio-project/blob/main/LICENSE" target="_blank">
@@ -14,7 +14,7 @@
 
 > A Pokemon Team Creator single-page-application that utilizes a React frontend and Rails API backend with Redux middleware. 
 
-Users can sign-up/login to create teams of 6 Pokemon. Users can pick from any of the 898 Pokemon available through PokeAPI to make their team and save it to the application's database.
+> Users can sign-up/login to create teams of 6 Pokemon. Users can pick from any of the 898 Pokemon available through PokeAPI to make their team and save it to the application's database.
 
 ### 🏠 [Homepage](https://github.com/RoUchiha/flatiron-phase5-portfolio-project)
 
