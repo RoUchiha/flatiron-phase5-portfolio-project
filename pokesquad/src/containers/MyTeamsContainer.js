@@ -32,9 +32,7 @@ class MyTeamsContainer extends Component {
       const myTeams = this.state.allTeams.filter( team => 
         team.user_id === this.props.current_user.user.id)
 
-        if (myTeams.length == 0) {
-          <Redirect to='addteam' />
-        }
+        
       console.log('my teams test', myTeams)
       console.log('teams store check', this.props.teams)
 
