@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setUser } from '../actions/userActions';
-import { Link, Browser } from 'react-router-dom';
+import { Link, Browser, withRouter } from 'react-router-dom';
 import '../style/Login.css';
 import axios from 'axios';
 
@@ -103,4 +103,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, { setUser })(Signup);
+export default withRouter(connect(null, { setUser })(Signup));

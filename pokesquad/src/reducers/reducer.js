@@ -33,7 +33,7 @@ const usersReducer = (state = {}, action) => {
             return action.payload;
            
     
-        case LOGOUT:
+        case "LOGOUT":
             console.log('logged out', state)
             return {};
 

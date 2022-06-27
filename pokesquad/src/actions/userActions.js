@@ -44,6 +44,21 @@ export const setUser = () => {
     }
 }
 
+export const logoutUser = () => {
+    return (dispatch) => {
+        return axios.get(`http://localhost:4000/logout`, {withCredentials: true})
+        .then(data => {
+            console.log('logout data', data.data)
+            if (data.data.logged_out) {
+                dispatch({
+                    type: "LOGOUT"
+                })
+            }
+        })
+        .catch(error => console.log("logout error", error))
+    }
+}
+
 
 export function login(user) {
 

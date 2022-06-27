@@ -12,6 +12,7 @@ import MyTeamsContainer from './containers/MyTeamsContainer';
 import AddTeamContainer from './containers/AddTeamContainer'
 import './App.css';
 import { LOGOUT, ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE, ADDTEAM, SIGNUP } from './routePaths';
+import Logout from './components/Logout';
 
 class App extends Component {
 
@@ -35,7 +36,7 @@ class App extends Component {
             <Route exact path={ADDTEAM} component={AddTeamContainer} >{!logged_in ? <Redirect to='/home' /> : <AddTeamContainer />}</Route>
             <Route exact path={LOGIN} component={Login} />
             <Route exact path={SIGNUP} component={Signup} />
-            <Route exact path={LOGOUT} component={Home}/>
+            <Route exact path={LOGOUT} component={Logout}/>
           </Switch>
         
 

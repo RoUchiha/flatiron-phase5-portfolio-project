@@ -4,6 +4,7 @@ import { setTeams } from '../actions/teamActions';
 import Team from '../components/Team.js'
 import TeamCollection from '../components/TeamCollection';
 import { Container, Card } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom';
 
 
 class MyTeamsContainer extends Component {
@@ -31,13 +32,19 @@ class MyTeamsContainer extends Component {
       const myTeams = this.state.allTeams.filter( team => 
         team.user_id === this.props.current_user.user.id)
 
+        if (myTeams.length == 0) {
+          <Redirect to='addteam' />
+        }
       console.log('my teams test', myTeams)
       console.log('teams store check', this.props.teams)
 
     
         return (
+
+          
             
            <div>
+            
             <br />
             <h2 className='my-teams-title'>My Teams</h2>
 
