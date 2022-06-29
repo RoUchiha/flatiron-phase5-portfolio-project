@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login, setUser } from '../actions/userActions';
-import { Link, Browser } from 'react-router-dom';
+import { Link, Browser, Redirect } from 'react-router-dom';
 import '../style/Login.css';
 import axios from 'axios';
 
@@ -19,6 +19,8 @@ class Login extends Component {
         this.setState({
             username: event.target.value
         })
+
+    
     };
 
     handlePasswordChange = (event) => {
@@ -31,25 +33,13 @@ class Login extends Component {
     handleSubmit = (event) => {
         console.log('logging in')
         event.preventDefault();
-        axios.post('http://localhost:4000/login', {
-            user: {
-                username: this.state.username,
-                password: this.state.password 
-            }
-        },
-        { withCredentials: true }
-        )
-        .then(data => {
-            console.log("login", data.data)
-            if (data.data.logged_in) {
-                this.props.setUser();
-                this.props.history.push('/allteams')
-            }
-        })
-        .catch(error => console.log("login error", error))
+        this.props.login(this.state);
+        
        
     }
 
+
+    
 
     render() {
         
@@ -98,4 +88,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, { setUser })(Login);
+export default connect(null, { login, setUser })(Login);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setUser } from '../actions/userActions';
+import { signup, setUser } from '../actions/userActions';
 import { Link, Browser, withRouter } from 'react-router-dom';
 import '../style/Login.css';
 import axios from 'axios';
@@ -32,22 +32,7 @@ class Signup extends Component {
     handleSubmit = (event) => {
         console.log('signing up')
         event.preventDefault();
-        axios.post('http://localhost:4000/users', {
-            user: {
-                username: this.state.username,
-                password: this.state.password 
-            }
-        },
-        { withCredentials: true }
-        )
-        .then(data => {
-            console.log("signup", data.data)
-            if (data.data.status === 'created') {
-                this.props.setUser();
-                this.props.history.push('/allteams')
-            }
-        })
-        .catch(error => console.log("signup error", error))
+        this.props.signup(this.state)
        
     }
         
@@ -103,4 +88,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default withRouter(connect(null, { setUser })(Signup));
+export default withRouter(connect(null, { signup, setUser })(Signup));

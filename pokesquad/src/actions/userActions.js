@@ -1,28 +1,35 @@
 import axios from "axios";
 import { LOGIN, LOGOUT } from "./constants";
 
+
+
+
 export function signup(user) {
 
     return dispatch => {
-        fetch('http://localhost:4000/users', {
-            method: "POST",
-            headers: {
-                
-                "Content-Type": "application/json"
-                
-            },
-            body: JSON.stringify({user})
+        axios.post('http://localhost:4000/users', {
+            user: {
+                username: user.username,
+                password: user.password 
+            }
         },
         { withCredentials: true }
         )
-        .then(response => response.json())
         .then(data => {
-            console.log('signup', data);
-            if (data.status === 'created') {
-                
-                dispatch({ type: "LOGIN", payload: data.user })
-            }
-        })
+            console.log("signup", data.data)
+            if (data.data.status === 'created') {
+                dispatch({type: "GETTING_USER" });
+                return axios.get('http://localhost:4000/logged_in', 
+                {withCredentials: true })
+                .then((data) => {
+                    console.log('user set', data.data)
+                    dispatch({
+                        type: "LOGIN_USER",
+                        payload: data.data
+                    })
+                })
+                    }
+                })
         .catch(error => console.log("signup error", error))
     }
 
@@ -61,23 +68,30 @@ export const logoutUser = () => {
 
 
 export function login(user) {
-
+    
     return (dispatch) => {
-        fetch(`http://localhost:4000/login`, {
-            method: "POST",
-            headers: {
-                
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({user})
+    axios.post('http://localhost:4000/login', {
+            user: {
+                username: user.username,
+                password: user.password 
+            }
         },
-            { withCredentials: true }
+        { withCredentials: true }
         )
-        .then(response => response.json())
         .then(data => {
-            console.log("login", data)
-            if (data.logged_in) {
-                dispatch({ type: 'LOGIN', payload: data })
+            console.log("login", data.data)
+            if (data.data.logged_in) {
+                dispatch({type: "GETTING_USER" });
+                return axios.get('http://localhost:4000/logged_in', 
+                {withCredentials: true })
+                .then((data) => {
+                    console.log('user set', data.data)
+                    dispatch({
+                        type: "LOGIN_USER",
+                        payload: data.data
+            })
+        })
+
             }
         })
         .catch(error => console.log("login error", error))
