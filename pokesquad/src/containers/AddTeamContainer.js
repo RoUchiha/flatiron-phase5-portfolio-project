@@ -4,24 +4,19 @@ import AddNewTeam from "../components/AddTeam";
 import Pokedex from "../components/Pokedex";
 import { Container } from 'semantic-ui-react'
 import PokedexContainer from './PokedexContainer';
+import { connect } from 'react-redux';
 
 
 class AddTeamContainer extends Component {
 
 
     state = {
-        allPokemon: []
+        allPokemon: this.props.pokemon
     }
 
 
 
-    componentDidMount() {
-        fetch('http://localhost:4000/pokemons')
-        .then(response => response.json())
-        .then(data => this.setState({ allPokemon: data}) )
-        .catch(error => console.log("fetch pokemon", error))
-    }
-
+    
 
     render() {
 
@@ -50,5 +45,14 @@ class AddTeamContainer extends Component {
 
 
 
+const mapStateToProps = (state) => {
+    return {
+        current_user: state.users,
+        pokemon: state.pokemon
+    }
+}
 
-export default AddTeamContainer;
+
+
+
+export default connect(mapStateToProps)(AddTeamContainer);

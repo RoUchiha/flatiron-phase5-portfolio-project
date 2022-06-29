@@ -1,15 +1,18 @@
 import { GET_POKEMON } from "./constants";
+import axios from "axios";
 
 export function fetchPokemon() {
 
-    return dispatch => {
-        fetch('/pokemons')
-        .then(response => {
-            return response.json()
+    return (dispatch) => {
+        dispatch({type: "GETTING_TEAMS" });
+        return axios.get('http://localhost:4000/pokemons')
+        .then((data) => {
+            console.log('all pokemon set', data.data)
+            dispatch({
+                type: "GET_POKEMON",
+                payload: data.data
+            })
         })
-        .then(data => 
-            dispatch({ type: GET_POKEMON, payload: data.data }))
-        .catch(error => console.log("fetch pokemon", error))
     }
 
 }

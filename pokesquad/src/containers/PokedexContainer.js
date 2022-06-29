@@ -1,22 +1,18 @@
 import React, { Component } from "react";
 import Pokedex from "../components/Pokedex";
 import '../App.css';
+import { connect } from "react-redux";
 
 
 class PokedexContainer extends Component {
 
     state = {
-        allPokemon: []
+        allPokemon: this.props.pokemon
     }
 
 
 
-    componentDidMount() {
-        fetch('http://localhost:4000/pokemons')
-        .then(response => response.json())
-        .then(data => this.setState({ allPokemon: data}) )
-        .catch(error => console.log("fetch pokemon", error))
-    }
+    
 
 
 
@@ -42,7 +38,11 @@ class PokedexContainer extends Component {
 
 }
 
+const mapStateToProps = (state) => {
+    return {
+        current_user: state.users,
+        pokemon: state.pokemon
+    }
+}
 
-
-
-export default PokedexContainer;
+export default connect(mapStateToProps)(PokedexContainer);

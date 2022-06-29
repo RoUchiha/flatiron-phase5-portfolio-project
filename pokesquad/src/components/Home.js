@@ -4,8 +4,11 @@ import { Link, Browser, Redirect } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
 import HomeRedirect from './HomeRedirect';
+import { fetchPokemon } from '../actions/pokemonActions';
 
 class Home extends Component {
+
+    
 
 
     render() {
