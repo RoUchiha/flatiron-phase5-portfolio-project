@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :teams
+  get '/teams/:id/delete', to: 'teams#destroy'
   resources :comments
   resources :pokemons
   resources :sessions, only: [:create, :get, :update, :delete]

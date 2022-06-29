@@ -34,18 +34,31 @@ export const setTeams = () => {
 
 export function addTeam(team) {
 
-    return dispatch => {
-        fetch(`http://localhost:4000/teams`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                
-            },
-            body: JSON.stringify({team})
-        })
-        .then(response => response.json())
-        .then(data => dispatch({ type: ADD_TEAM, payload: data }))
-        .catch(error => console.log("add team", error))
+    return (dispatch) => {
+        axios.post('http://localhost:4000/teams', {
+        team: {
+            user_id: team.user_id,
+            user_username: team.user_username,
+           name: team.name,
+           pokemon1: team.pokemon1,
+           pokemon2: team.pokemon2,
+           pokemon3: team.pokemon3,
+           pokemon4: team.pokemon4,
+           pokemon5: team.pokemon5,
+           pokemon6: team.pokemon6 
+        }
+    },
+    
+    )
+    .then(data => {
+        console.log("creating team", data.data)
+        if (data.data.status === 'created') {
+            dispatch({type: ADD_TEAM, payload: team})
+            
+            
+        }
+    })
+    .catch(error => console.log("login error", error))
     }
 
 }

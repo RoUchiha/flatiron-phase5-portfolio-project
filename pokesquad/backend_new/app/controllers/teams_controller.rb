@@ -42,6 +42,8 @@ class TeamsController < ApplicationController
   # DELETE /teams/1
   def destroy
     @team.destroy
+
+    render json: {status: 'deleted'}
   end
 
   private
