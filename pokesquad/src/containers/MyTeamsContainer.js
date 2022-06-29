@@ -10,19 +10,8 @@ import { Redirect } from 'react-router-dom';
 class MyTeamsContainer extends Component {
 
   state = {
-    allTeams: []
+    allTeams: this.props.teams
   }
-
-
-
-  componentDidMount() {
-    fetch('http://localhost:4000/teams')
-    .then(response => response.json())
-    .then(data => this.setState({ allTeams: data}) )
-    .catch(error => console.log("fetch teams", error));
-
-    this.props.setTeams();
-}
 
 
 

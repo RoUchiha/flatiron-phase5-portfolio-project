@@ -14,11 +14,12 @@ import './App.css';
 import { LOGOUT, ALLTEAMS, MYTEAMS, POKEDEX, LOGIN, HOMEPAGE, ADDTEAM, SIGNUP } from './routePaths';
 import Logout from './components/Logout';
 import { fetchPokemon } from './actions/pokemonActions';
-
+import { setTeams } from './actions/teamActions';
 class App extends Component {
 
   componentDidMount() {
     this.props.fetchPokemon();
+    this.props.setTeams()
   }
 
   render() {
@@ -59,4 +60,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPokemon })(App);
+export default connect(mapStateToProps, { setTeams, fetchPokemon })(App);
